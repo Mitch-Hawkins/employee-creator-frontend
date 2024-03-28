@@ -1,0 +1,97 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  // border: 2px solid green;
+  gap: 50px;
+  min-height: 90vh;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+.headerButtonWrapper {
+  // border: 2px solid cyan;
+
+  width: 90vw;
+  font-size: 48px;
+  display: flex;
+  margin-top: 60px;
+  justify-content: space-between;
+  align-items: center;
+  & button {
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 200px;
+  }
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(163, 162, 162, 0.267);
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(163, 162, 162, 0.267);
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  height: 900px;
+  gap: 30px;
+  font-size: 28px;
+}
+
+.fieldWrapper {
+  display: flex;
+  // border: 2px solid red;
+  width: 70%;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.inputErrorWrapper {
+  display: flex;
+  // border: 2px solid blue;
+  align-items: end;
+  flex-direction: column;
+  text-align: right;
+}
+
+.errorMessage {
+  font-size: 16px;
+  color: red;
+}
+
+.textInput {
+  width: 200px;
+  height: 28px;
+  font-size: 18px;
+}
+
+.numberInput {
+  width: 50px;
+  height: 28px;
+  font-size: 18px;
+}
+
+.dateInput {
+  height: 28px;
+}
+
+select {
+  height: 28px;
+  font-size: 18px;
+}
+
+.submitButton {
+  height: 40px;
+  width: 120px;
+  font-size: 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 200px;
+}

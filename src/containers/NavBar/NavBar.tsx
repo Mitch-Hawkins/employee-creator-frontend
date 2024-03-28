@@ -1,25 +1,47 @@
 import logo from "../../assets/icons/icons8-employee-50.png";
-import search from "../../assets/icons/icons8-search-24.png";
 import avatar from "../../assets/icons/icons8-avatar-60.png";
-import heartEmpty from "../../assets/icons/icons8-heart-50.png";
+import add from "../../assets/icons/icons8-add-60.png";
 import styles from "./NavBar.module.scss";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import { useNavigate } from "react-router-dom";
 
-const NavBar = () => {
+interface NavBarProps {
+  searchTerm: string;
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+  pageNumber: number;
+  setPageNumber: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const NavBar = ({
+  searchTerm,
+  setSearchTerm,
+  pageNumber,
+  setPageNumber,
+}: NavBarProps) => {
+  const navigate = useNavigate();
+
+  const handleNavigateToHome = () => {
+    setPageNumber(0);
+    navigate("/");
+  };
+
   return (
     <div className={styles.navBarContainer}>
       {/* Logo/Header */}
-      <div className={styles.headerContainer}>
+      <div className={styles.headerContainer} onClick={handleNavigateToHome}>
         <img src={logo} />
         <h1>Employee Tracker</h1>
       </div>
       {/* Searchbar with search icon */}
-      <div className={styles.searchContainer}>
-        <img src={search} />
-        <input type="text"></input>
-      </div>
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
       {/* Some dumb icon components in the top right corner */}
       <div className={styles.dumbIconsContainer}>
-        <img src={heartEmpty} />
+        <img src={add} onClick={() => navigate("/createForm")} />
         <img src={avatar} />
       </div>
     </div>
